@@ -9,6 +9,46 @@
 </head>
 <body>
 	
+	<header>
+		<h1>MOKEPON</h1>
+	</header>
+
+	<section id="petChoice">
+		<h2>Elige tu mascota:</h2>
+
+		<label for="hipodoge">Hipodoge</label>
+		<input type="radio" name="pet" id="hipodoge">
+
+		<label for="capipepo">Capipepo</label>
+		<input type="radio" name="pet" id="capipepo">
+
+		<label for="ratigueya">Ratigueya</label>
+		<input type="radio" name="pet" id="ratigueya">
+
+		<button id="petBtn">Seleccionar</button>
+	</section>
+
+	<section id="attackChoice">
+		<h2>Elige tu ataque:</h2>
+
+		<p>Tú mascota tiene <span>3</span> vidas</p>
+		<p>La mascota de tú oponente tiene <span>3</span> vidas</p>
+
+		<button id="fireBtn">Fuego</button>
+		<button id="waterBtn">Agua</button>
+		<button id="earthBtn">Tierra</button>
+
+	</section>
+
+	<section id="message">
+
+	<p>Tú mascota atacó con FUEGO, la mascota de tú oponente atacó con TIERRA - GANASTE 🎉</p>
+	</section>
+
+	<section id="restart">
+		<button id="restartBtn">Reiniciar</button>
+	</section>
+
 	<script src="./src/main.js"></script>
 </body>
 </html>
