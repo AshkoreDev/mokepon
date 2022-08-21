@@ -13,26 +13,27 @@
 		<h1>MOKEPON</h1>
 	</header>
 
-	<section id="petChoice">
+	<section id="petChoose">
 		<h2>Elige tu mascota:</h2>
 
-		<label for="hipodoge">Hipodoge</label>
-		<input type="radio" name="pet" id="hipodoge">
+		<label for="hipodogeInput">Hipodoge</label>
+		<input type="radio" name="pet" id="hipodogeInput">
 
-		<label for="capipepo">Capipepo</label>
-		<input type="radio" name="pet" id="capipepo">
+		<label for="capipepoInput">Capipepo</label>
+		<input type="radio" name="pet" id="capipepoInput">
 
-		<label for="ratigueya">Ratigueya</label>
-		<input type="radio" name="pet" id="ratigueya">
+		<label for="ratigueyaInput">Ratigueya</label>
+		<input type="radio" name="pet" id="ratigueyaInput">
 
 		<button id="petBtn">Seleccionar</button>
 	</section>
 
-	<section id="attackChoice">
+	<section id="attackChoose">
 		<h2>Elige tu ataque:</h2>
 
-		<p>Tú mascota tiene <span>3</span> vidas</p>
-		<p>La mascota de tú oponente tiene <span>3</span> vidas</p>
+		<p>Tú mascota es <span id="playerChosenPet"></span> y tiene <span id="playerPetLives">3</span> vidas</p>
+
+		<p>La mascota de tú oponente es <span id="opponentChosenPet"></span> y tiene <span id="opponentPetLives">3</span> vidas</p>
 
 		<button id="fireBtn">Fuego</button>
 		<button id="waterBtn">Agua</button>
