@@ -1,6 +1,7 @@
 
 let playerAttack = '';
 let opponentAttack = '';
+let fightResults = '';
 
 // Pets
 const hipodogeInput = document.getElementById('hipodogeInput');
@@ -116,10 +117,10 @@ function chooseOpponentAttack() {
 		opponentAttack = 'TIERRA';
 	}
 
-	createMessage();
+	fight();	
 }
 
-function createMessage() {
+function createMessages() {
 	
 	const playerChosenAttack = document.createElement('p');
 	const opponentChosenAttack = document.createElement('p');
@@ -127,11 +128,32 @@ function createMessage() {
 	const fightResult = document.createElement('p');
 
 	playerChosenAttack.textContent = `Tú mascota atacó con ${playerAttack}`;
+
 	opponentChosenAttack.textContent = `La mascota de tú oponente atacó con ${opponentAttack}`;
+
+	fightResult.textContent = fightResults;
 
 	messages.appendChild(playerChosenAttack);
 	messages.appendChild(opponentChosenAttack);
 	messages.appendChild(fightResult);
+}
+
+function fight(argument) {
+
+	if (playerAttack == opponentAttack) {
+
+		fightResults = 'HUBO UN EMPATE.';
+
+	} else if (playerAttack == 'FUEGO' && opponentAttack == 'TIERRA' || playerAttack == 'AGUA' && opponentAttack == 'FUEGO' || playerAttack == 'TIERRA' && opponentAttack == 'AGUA') {
+
+		fightResults = 'GANASTE.';
+
+	} else {
+
+		fightResults = 'PERDISTE.';
+	}
+
+	createMessages();
 }
 
 petBtn.addEventListener('click', choosePlayerPet);
