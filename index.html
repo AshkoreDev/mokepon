@@ -14,7 +14,7 @@
 		<h1>MOKEPON</h1>
 	</header>
 
-	<section id="petChoose">
+	<section id="petChooseSection">
 		<h2>Elige tu mascota:</h2>
 
 		<label for="hipodogeInput">Hipodoge</label>
@@ -26,10 +26,10 @@
 		<label for="ratigueyaInput">Ratigueya</label>
 		<input type="radio" name="pet" id="ratigueyaInput">
 
-		<button id="petBtn">Seleccionar</button>
+		<button id="petChooseBtn">Seleccionar</button>
 	</section>
 
-	<section id="attackChoose" class="attackSection">
+	<section id="attackChooseSection" class="attackSection">
 		<h2>Elige tu ataque:</h2>
 
 		<p>Tú mascota es <span id="playerChosenPet"></span> y tiene <span id="playerPetLives"></span> vidas</p>
@@ -42,12 +42,12 @@
 
 	</section>
 
-	<section id="messages"></section>
+	<section id="messageSection"></section>
 
-	<section id="restart" class="restartSection">
+	<section id="restartSection" class="restartSection">
 		<button id="restartBtn">Reiniciar</button>
 	</section>
 
-	<script src="./src/main.js"></script>
+	<script src="./src/main.js" type="module"></script>
 </body>
 </html>

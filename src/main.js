@@ -1,34 +1,10 @@
+import './js/nodes.js';
 
 let playerAttack = '';
 let opponentAttack = '';
 let fightResults = '';
 let playerLives = 3;
 let opponentLives = 3;
-
-// Pets
-const hipodogeInput = document.getElementById('hipodogeInput');
-const capipepoInput = document.getElementById('capipepoInput');
-const ratigueyaInput = document.getElementById('ratigueyaInput');
-
-const playerChosenPet = document.getElementById('playerChosenPet');
-const opponentChosenPet = document.getElementById('opponentChosenPet');
-
-const playerPetLives = document.getElementById('playerPetLives');
-const opponentPetLives = document.getElementById('opponentPetLives');
-
-const messages = document.getElementById('messages');
-
-
-// Buttons
-const petBtn = document.getElementById('petBtn');
-const fireBtn = document.getElementById('fireBtn');
-const waterBtn = document.getElementById('waterBtn');
-const earthBtn = document.getElementById('earthBtn');
-const restartBtn = document.getElementById('restartBtn');
-
-// Sections
-const attackChoose = document.getElementById('attackChoose');
-const restart = document.getElementById('restart');
 
 
 // Functions
@@ -59,7 +35,6 @@ function chooseOpponentPet() {
 	}
 
 	opponentChosenPet.textContent = petOpponent;
-	attackChoose.style.display = 'block';
 }
 
 
@@ -91,9 +66,12 @@ function choosePlayerPet() {
 	hipodogeInput.disabled = true;
 	capipepoInput.disabled = true;
 	ratigueyaInput.disabled = true;
-	petBtn.disabled = true;
+	petChooseBtn.disabled = true;
 
 	playerChosenPet.textContent = petPlayer;
+	playerPetLives.textContent = playerLives;
+	opponentPetLives.textContent = opponentLives;
+	attackChooseSection.style.display = 'block';
 
 	chooseOpponentPet();
 }
@@ -149,9 +127,9 @@ function createMessages() {
 
 	fightResult.textContent = fightResults;
 
-	messages.appendChild(playerChosenAttack);
-	messages.appendChild(opponentChosenAttack);
-	messages.appendChild(fightResult);
+	messageSection.appendChild(playerChosenAttack);
+	messageSection.appendChild(opponentChosenAttack);
+	messageSection.appendChild(fightResult);
 }
 
 function fight(argument) {
@@ -195,7 +173,7 @@ function lives(argument) {
 			alert('PERDISTE.');
 		}
 
-		restart.style.display = 'block';
+		restartSection.style.display = 'block';
 	} 
 }
 
@@ -205,7 +183,7 @@ function restartGame() {
 	location.reload();
 }
 
-petBtn.addEventListener('click', choosePlayerPet);
+petChooseBtn.addEventListener('click', choosePlayerPet);
 fireBtn.addEventListener('click', fireAttack);
 waterBtn.addEventListener('click', waterAttack);
 earthBtn.addEventListener('click', earthAttack);
