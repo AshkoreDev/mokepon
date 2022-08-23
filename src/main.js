@@ -26,6 +26,10 @@ const waterBtn = document.getElementById('waterBtn');
 const earthBtn = document.getElementById('earthBtn');
 const restartBtn = document.getElementById('restartBtn');
 
+// Sections
+const attackChoose = document.getElementById('attackChoose');
+const restart = document.getElementById('restart');
+
 
 // Functions
 function random(min, max) {
@@ -55,6 +59,7 @@ function chooseOpponentPet() {
 	}
 
 	opponentChosenPet.textContent = petOpponent;
+	attackChoose.style.display = 'block';
 }
 
 
@@ -80,7 +85,13 @@ function choosePlayerPet() {
 	} else {
 
 		alert('SELECCIONA UNA MASCOTA.');
+		restartGame();
 	}
+
+	hipodogeInput.disabled = true;
+	capipepoInput.disabled = true;
+	ratigueyaInput.disabled = true;
+	petBtn.disabled = true;
 
 	playerChosenPet.textContent = petPlayer;
 
@@ -152,41 +163,50 @@ function fight(argument) {
 	} else if (playerAttack == 'FUEGO' && opponentAttack == 'TIERRA' || playerAttack == 'AGUA' && opponentAttack == 'FUEGO' || playerAttack == 'TIERRA' && opponentAttack == 'AGUA') {
 
 		fightResults = 'GANASTE.';
-
-		if (opponentLives > 0) {
-			opponentLives--;
-		}
+		opponentLives--;
 		
 	} else {
 
 		fightResults = 'PERDISTE.';
-		
-
-		if (playerLives > 0) {
-			playerLives--;
-		}
+		playerLives--;
 	}
 
 	playerPetLives.textContent = playerLives;
 	opponentPetLives.textContent = opponentLives;
+
 	createMessages();
 	lives();
 }
 
 function lives(argument) {
 	
-	if (opponentLives == 0) {
+	if (opponentLives == 0 || playerLives == 0) {
 
-		alert('GANASTE.');
+		fireBtn.disabled = true;
+		waterBtn.disabled = true;
+		earthBtn.disabled = true;
 
-	} else if (playerLives == 0) {
+		if (opponentLives == 0) {
 
-		alert('PERDISTE.');
+			alert('GANASTE.');
 
-	}
+		} else if (playerLives == 0) {
+
+			alert('PERDISTE.');
+		}
+
+		restart.style.display = 'block';
+	} 
+}
+
+
+function restartGame() {
+	
+	location.reload();
 }
 
 petBtn.addEventListener('click', choosePlayerPet);
 fireBtn.addEventListener('click', fireAttack);
 waterBtn.addEventListener('click', waterAttack);
 earthBtn.addEventListener('click', earthAttack);
+restartBtn.addEventListener('click', restartGame);
