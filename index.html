@@ -6,48 +6,64 @@
 	<link rel="icon" type="image/png" href="https://img.icons8.com/color/344/ultra-ball.png">
 	<title>MOKEPON</title>
 
-	<link rel="stylesheet"  href="./src/style.css">
+	<link rel="stylesheet"  href="./src/css/style.css">
 </head>
 <body>
-	
-	<header>
-		<h1>MOKEPON</h1>
-	</header>
 
-	<section id="petChooseSection">
-		<h2>Elige tu mascota:</h2>
+	<main>
+		<section class="borderScreen">
+			<section class="screen">
 
-		<label for="hipodogeInput">Hipodoge</label>
-		<input type="radio" name="pet" id="hipodogeInput">
+				<section id="petChooseSection">
+					<h2>ELIGE TÚ MASCOTA:</h2>
 
-		<label for="capipepoInput">Capipepo</label>
-		<input type="radio" name="pet" id="capipepoInput">
+					<label for="hipodogeInput">HIPODOGE</label>
+					<input type="radio" name="pet" id="hipodogeInput">
 
-		<label for="ratigueyaInput">Ratigueya</label>
-		<input type="radio" name="pet" id="ratigueyaInput">
+					<label for="capipepoInput">CAPIPEPO</label>
+					<input type="radio" name="pet" id="capipepoInput">
 
-		<button id="petChooseBtn">Seleccionar</button>
-	</section>
+					<label for="ratigueyaInput">RATIGUEYA</label>
+					<input type="radio" name="pet" id="ratigueyaInput">
+				</section>
 
-	<section id="attackChooseSection" class="attackSection">
-		<h2>Elige tu ataque:</h2>
+				<section id="attackChooseSection" class="attackSection">
 
-		<p>Tú mascota es <span id="playerChosenPet"></span> y tiene <span id="playerPetLives"></span> vidas</p>
+					<p class="paragraph">TÚ MASCOTA ES <span id="playerChosenPet"></span> Y TIENE <span id="playerPetLives"></span> PUNTOS DE VIDA.</p>
 
-		<p>La mascota de tú oponente es <span id="opponentChosenPet"></span> y tiene <span id="opponentPetLives"></span> vidas</p>
+					<p class="paragraph">LA MASCOTA DE TÚ OPONENTE ES <span id="opponentChosenPet"></span> Y TIENE <span id="opponentPetLives"></span> PUNTOS DE VIDA.</p>
 
-		<button id="fireBtn">Fuego</button>
-		<button id="waterBtn">Agua</button>
-		<button id="earthBtn">Tierra</button>
+					<h2 class="attack--title">ELIGE TÚ ATAQUE:</h2>
 
-	</section>
+					<section id="messageSection"></section>
 
-	<section id="messageSection"></section>
+				</section>
 
-	<section id="restartSection" class="restartSection">
+			</section>
+			<h1>MOKEPON</h1>
+		</section>
+
+		<section class="buttons">
+			<button id="petChooseBtn">Seleccionar</button>
+
+			<button id="fireBtn">Fuego</button>
+			<button id="waterBtn">Agua</button>
+			<button id="earthBtn">Tierra</button>
+
+					<section id="restartSection" class="restartSection">
 		<button id="restartBtn">Reiniciar</button>
-	</section>
+	</section> 
 
+		</section>
+	</main>
+
+	
+
+	
+
+	
+
+	
 	<script src="./src/main.js" type="module"></script>
 </body>
 </html>

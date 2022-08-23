@@ -71,6 +71,7 @@ function choosePlayerPet() {
 	playerChosenPet.textContent = petPlayer;
 	playerPetLives.textContent = playerLives;
 	opponentPetLives.textContent = opponentLives;
+	petChooseSection.style.display = 'none';
 	attackChooseSection.style.display = 'block';
 
 	chooseOpponentPet();

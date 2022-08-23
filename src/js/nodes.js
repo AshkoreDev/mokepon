@@ -1,6 +1,7 @@
 const nodes = (id) => document.querySelector(id);
 
 // Sections
+const petChooseSection = nodes('#petChooseSection');
 const attackChooseSection = nodes('#attackChooseSection');
 const restartSection = nodes('#restartSection');
 const messageSection = nodes('#messageSection');
