@@ -2,6 +2,8 @@
 let playerAttack = '';
 let opponentAttack = '';
 let fightResults = '';
+let playerLives = 3;
+let opponentLives = 3;
 
 // Pets
 const hipodogeInput = document.getElementById('hipodogeInput');
@@ -10,6 +12,9 @@ const ratigueyaInput = document.getElementById('ratigueyaInput');
 
 const playerChosenPet = document.getElementById('playerChosenPet');
 const opponentChosenPet = document.getElementById('opponentChosenPet');
+
+const playerPetLives = document.getElementById('playerPetLives');
+const opponentPetLives = document.getElementById('opponentPetLives');
 
 const messages = document.getElementById('messages');
 
@@ -148,12 +153,37 @@ function fight(argument) {
 
 		fightResults = 'GANASTE.';
 
+		if (opponentLives > 0) {
+			opponentLives--;
+		}
+		
 	} else {
 
 		fightResults = 'PERDISTE.';
+		
+
+		if (playerLives > 0) {
+			playerLives--;
+		}
 	}
 
+	playerPetLives.textContent = playerLives;
+	opponentPetLives.textContent = opponentLives;
 	createMessages();
+	lives();
+}
+
+function lives(argument) {
+	
+	if (opponentLives == 0) {
+
+		alert('GANASTE.');
+
+	} else if (playerLives == 0) {
+
+		alert('PERDISTE.');
+
+	}
 }
 
 petBtn.addEventListener('click', choosePlayerPet);
