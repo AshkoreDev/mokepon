@@ -69,12 +69,11 @@ function choosePlayerPet() {
 	
 
 	if (hipodogeInput.checked || capipepoInput.checked || ratigueyaInput.checked) {
+
 		petChooseSection.style.display = 'none';
 		attackChooseSection.style.display = 'block';
 		chooseOpponentPet();
 	}
-
-	
 }
 
 function fireAttack() {
@@ -142,7 +141,7 @@ function createMessages() {
 	}
 }
 
-function fight(argument) {
+function fight() {
 
 	if (playerAttack == opponentAttack) {
 
@@ -166,7 +165,7 @@ function fight(argument) {
 	createMessages();
 }
 
-function lives(argument) {
+function lives() {
 	
 	if (opponentLives == 0 || playerLives == 0) {
 
@@ -189,6 +188,7 @@ function lives(argument) {
 
 
 function restartGame() {
+	
 	setTimeout(() => location.reload(), 1000);
 }
 
