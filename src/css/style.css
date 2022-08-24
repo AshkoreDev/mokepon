@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
 	margin: 0;
@@ -209,14 +209,19 @@ h1 {
 }
 
 .petCard {
+	width: 80px;
 	display: flex;
 	gap: 5px;
 	flex-direction: column;
 	align-items: center;
 }
 
-input {
-	display: none;
+label {
+	text-align: center;
+}
+
+input[type="radio"] {
+	appearance: none;
 }
 
 /* MEDIA QUERYS */
@@ -241,7 +246,7 @@ input {
   	cursor: pointer;
     transform: scale(0.95);
   }
-  .petCard:hover {
+  label:hover {
   	cursor: pointer;
     transform: scale(1.1);
   }
