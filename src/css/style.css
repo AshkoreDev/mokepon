@@ -23,15 +23,15 @@ main {
 	margin-top: 12px;
 	border-radius: 10px 10px 80px 10px;
 	border: 2px solid black;
-	background-color: yellow;
+	background-color: #D59402;
 }
 
 .borderScreen {
 	width: 280px;
 	margin: 10px auto;
 	padding: 10px;
-	background-color: black;
 	border-radius: 10px;
+	background-color: #35393C;
 }
 
 .screen {
@@ -39,11 +39,11 @@ main {
 	height: 260px;
 	margin: 0 auto;
 	padding: 10px;
-	background-color: #9e9e9e;
+	background-color: #C1C6B0;
 }
 
 .paragraph {
-	font-size: 14px;
+	font-size: 15px;
 }
 
 h2 {
@@ -55,11 +55,40 @@ h2 {
 	margin: 10px 0; 
 }
 
+#failMessage {
+	/*margin: 80px 0;*/
+	display: none;
+}
+
 #messageSection {
 	width: 100%;
-	height: 145px;
+	height: 165px;
+	padding: 5px;
+	font-size: 15px;
 	overflow-y: scroll;
-	background-color: white;
+	background-color: #C1C6B0;
+}
+
+#messageSection::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+#messageSection::-webkit-scrollbar:vertical {
+  width:8px;
+}
+
+#messageSection::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 2px solid #f1f2f3;
+  background-color: #797979;
+}
+
+.message--item {
+	margin: 8px 0;
+}
+
+.message--item--result {
+	margin-bottom: 20px;
 }
 
 h1 {
@@ -68,8 +97,14 @@ h1 {
 	text-align: center;
 }
 
-.attackSection {
+#attackChooseSection {
 	display: none;
+}
+
+.attackSection {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 /* BUTTONS */
@@ -84,31 +119,37 @@ h1 {
 	height: 30px;
 	margin: 60px 20px 0;
 	color: white;
+	font-weight: bold;
 	position: relative;
 	border-radius: 6px;
-	background-color: darkblue;
+	border: 2px solid black;
+	background-color: #36352D;
 }
 
 #petChooseBtn:before {
 	content: "";
-	width: 30px;
+	width: 27px;
 	height: 40px;
 	position: absolute;
-	left: calc(100% - 62px);
-	bottom: calc(100% - 1px);
+	left: calc(100% - 64px);
+	bottom: calc(100% - 0px);
 	border-radius: 6px 6px 0 0;
-	background-color: darkblue;
+	border: 2px solid black;
+	border-bottom: none;
+	background-color: #36352D;
 }
 
 #petChooseBtn:after {
 	content: "";
-	width: 30px;
+	width: 27px;
 	height: 40px;
 	position: absolute;
-	left: calc(100% - 62px);
-	top: calc(100% - 1px);
+	left: calc(100% - 64px);
+	top: calc(100% - 0px);
 	border-radius: 0 0 6px 6px;
-	background-color: darkblue;
+	border: 2px solid black;
+	border-top: none;
+	background-color: #36352D;
 }
 
 .attackButtons {
@@ -122,6 +163,7 @@ h1 {
 	width: 35px;
 	height: 35px;
 	color: white;
+	font-weight: bold;
 	border-radius: 50%;
 	position: absolute;
 	border: 2px solid black;
@@ -130,23 +172,23 @@ h1 {
 #fireBtn {
 	top: calc(100% - 45px);
 	right: calc(100% - 40px);
-	background-color: red;
+	background-color: #36352D;
 }
 
 #waterBtn {
 	top: calc(100% - 60px);
 	right: calc(100% - 98px);
-	background-color: lightblue;
+	background-color: #36352D;
 }
 
 #earthBtn {
 	top: calc(100% - 5px);
 	right: calc(100% - 80px);
-	background-color: brown;
+	background-color: #36352D;
 }
 
 #restartSection {
-	margin: 80px auto;
+	margin: 80px auto 0;
 	display: none;
 }
 
@@ -156,5 +198,29 @@ h1 {
 	color: white;
 	border-radius: 6px;
 	border: 1px solid black;
-	background-color: black;
+	background-color: #36352D;
+}
+
+/* MEDIA QUERYS */
+@media (hover: hover) {
+  #petChooseBtn:hover {
+  	cursor: pointer;
+    transform: scale(0.95);
+  }
+  #fireBtn:hover {
+  	cursor: pointer;
+    transform: scale(0.95);
+  }
+  #waterBtn:hover {
+  	cursor: pointer;
+    transform: scale(0.95);
+  }
+  #earthBtn:hover {
+  	cursor: pointer;
+    transform: scale(0.95);
+  }
+  #restartBtn:hover {
+  	cursor: pointer;
+    transform: scale(0.95);
+  }
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" href="https://img.icons8.com/color/344/ultra-ball.png">
+	<!-- <link rel="icon" type="image/png" href="https://img.icons8.com/color/344/ultra-ball.png"> -->
 	<title>MOKEPON</title>
 
 	<link rel="stylesheet"  href="./src/css/style.css">
@@ -25,13 +25,24 @@
 
 					<label for="ratigueyaInput">RATIGUEYA</label>
 					<input type="radio" name="pet" id="ratigueyaInput">
+
 				</section>
+				
+				<h2 id="failMessage">SELECCIONA UNA MASCOTA...</h2>
 
-				<section id="attackChooseSection" class="attackSection">
+				<section id="attackChooseSection" >
 
-					<p class="paragraph">TÚ MASCOTA ES <span id="playerChosenPet"></span> Y TIENE <span id="playerPetLives"></span> PUNTOS DE VIDA.</p>
+					<section class="attackSection">
+						<div>
+							<p class="paragraph">JUGADOR: <span id="playerChosenPet"></span>.</p>
+							<p class="paragraph">VIDAS: <span id="playerPetLives"></span> ❤</p>
+						</div>
 
-					<p class="paragraph">LA MASCOTA DE TÚ OPONENTE ES <span id="opponentChosenPet"></span> Y TIENE <span id="opponentPetLives"></span> PUNTOS DE VIDA.</p>
+						<div>
+							<p class="paragraph">OPONENTE: <span id="opponentChosenPet"></span>.</p>
+							<p class="paragraph">VIDAS: <span id="opponentPetLives"></span> ❤</p>
+						</div>
+					</section>
 
 					<h2 class="attack--title">ELIGE TÚ ATAQUE:</h2>
 
@@ -54,7 +65,7 @@
 
 			<section id="restartSection" class="restartSection">
 				<button id="restartBtn">Reiniciar</button>
-			</section> 
+			</section>
 
 		</section>
 	</main>

@@ -24,3 +24,5 @@ const opponentChosenPet = nodes('#opponentChosenPet');
 
 const playerPetLives = nodes('#playerPetLives');
 const opponentPetLives = nodes('#opponentPetLives');
+
+const failMessage = nodes('#failMessage');

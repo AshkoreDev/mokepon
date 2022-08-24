@@ -5,6 +5,7 @@ let opponentAttack = '';
 let fightResults = '';
 let playerLives = 3;
 let opponentLives = 3;
+let finalResults = '';
 
 
 // Functions
@@ -21,17 +22,14 @@ function chooseOpponentPet() {
 	if (randomOpponent == 1) {
 
 		petOpponent = 'HIPODOGE';
-		alert('LA MASCOTA DE TU OPONENTE SELECCIONADA ES HIPODOGE.');
 
 	} else if (randomOpponent == 2) {
 
 		petOpponent = 'CAPIPEPO';
-		alert('LA MASCOTA DE TU OPONENTE SELECCIONADA ES CAPIPEPO.');
 
 	} else {
 
 		petOpponent = 'RATIGUEYA';
-		alert('LA MASCOTA DE TU OPONENTE SELECCIONADA ES RATIGUEYA.');
 	}
 
 	opponentChosenPet.textContent = petOpponent;
@@ -45,36 +43,38 @@ function choosePlayerPet() {
 	if (hipodogeInput.checked) {
 
 		petPlayer = 'HIPODOGE';
-		alert('TU MASCOTA SELECCIONADA ES HIPODOGE.');
 
 	} else if (capipepoInput.checked) {
 		
 		petPlayer = 'CAPIPEPO';
-		alert('TU MASCOTA SELECCIONADA ES CAPIPEPO.');
 
 	} else if (ratigueyaInput.checked) {
 		
 		petPlayer = 'RATIGUEYA';
-		alert('TU MASCOTA SELECCIONADA ES RATIGUEYA.');
 
 	} else {
-
-		alert('SELECCIONA UNA MASCOTA.');
+		petChooseSection.style.display = 'none';
+		failMessage.style.display = 'block';
 		restartGame();
 	}
 
-	hipodogeInput.disabled = true;
-	capipepoInput.disabled = true;
-	ratigueyaInput.disabled = true;
+	// hipodogeInput.disabled = true;
+	// capipepoInput.disabled = true;
+	// ratigueyaInput.disabled = true;
 	petChooseBtn.disabled = true;
 
 	playerChosenPet.textContent = petPlayer;
 	playerPetLives.textContent = playerLives;
 	opponentPetLives.textContent = opponentLives;
-	petChooseSection.style.display = 'none';
-	attackChooseSection.style.display = 'block';
+	
 
-	chooseOpponentPet();
+	if (hipodogeInput.checked || capipepoInput.checked || ratigueyaInput.checked) {
+		petChooseSection.style.display = 'none';
+		attackChooseSection.style.display = 'block';
+		chooseOpponentPet();
+	}
+
+	
 }
 
 function fireAttack() {
@@ -119,18 +119,27 @@ function createMessages() {
 	
 	const playerChosenAttack = document.createElement('p');
 	const opponentChosenAttack = document.createElement('p');
-
 	const fightResult = document.createElement('p');
+	const finalResult = document.createElement('p');
 
-	playerChosenAttack.textContent = `Tú mascota atacó con ${playerAttack}`;
+	opponentChosenAttack.className = 'message--item';
+	fightResult.className = 'message--item--result';
 
-	opponentChosenAttack.textContent = `La mascota de tú oponente atacó con ${opponentAttack}`;
+	playerChosenAttack.textContent = `TÚ ATAQUE FUE: ${playerAttack}.`;
+
+	opponentChosenAttack.textContent = `EL ATAQUE DE TÚ OPONENTE FUE: ${opponentAttack}.`;
 
 	fightResult.textContent = fightResults;
+	finalResult.textContent = `RESULTADO FINAL: ${finalResults}...`;
 
 	messageSection.appendChild(playerChosenAttack);
 	messageSection.appendChild(opponentChosenAttack);
 	messageSection.appendChild(fightResult);
+
+	if (opponentLives == 0 || playerLives == 0) {
+
+		messageSection.appendChild(finalResult);
+	}
 }
 
 function fight(argument) {
@@ -141,20 +150,20 @@ function fight(argument) {
 
 	} else if (playerAttack == 'FUEGO' && opponentAttack == 'TIERRA' || playerAttack == 'AGUA' && opponentAttack == 'FUEGO' || playerAttack == 'TIERRA' && opponentAttack == 'AGUA') {
 
-		fightResults = 'GANASTE.';
+		fightResults = 'GANASTE LA PARTIDA.';
 		opponentLives--;
 		
 	} else {
 
-		fightResults = 'PERDISTE.';
+		fightResults = 'PERDISTE LA PARTIDA.';
 		playerLives--;
 	}
 
 	playerPetLives.textContent = playerLives;
 	opponentPetLives.textContent = opponentLives;
 
-	createMessages();
 	lives();
+	createMessages();
 }
 
 function lives(argument) {
@@ -167,11 +176,11 @@ function lives(argument) {
 
 		if (opponentLives == 0) {
 
-			alert('GANASTE.');
+			finalResults = 'GANASTE';
 
 		} else if (playerLives == 0) {
 
-			alert('PERDISTE.');
+			finalResults = 'PERDISTE';
 		}
 
 		restartSection.style.display = 'block';
@@ -180,8 +189,7 @@ function lives(argument) {
 
 
 function restartGame() {
-	
-	location.reload();
+	setTimeout(() => location.reload(), 1000);
 }
 
 petChooseBtn.addEventListener('click', choosePlayerPet);
