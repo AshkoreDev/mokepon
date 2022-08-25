@@ -53,6 +53,7 @@ function choosePlayerPet() {
 		petPlayer = 'RATIGUEYA';
 
 	} else {
+
 		petChooseSection.style.display = 'none';
 		failMessage.style.display = 'block';
 		restartGame();
@@ -62,6 +63,9 @@ function choosePlayerPet() {
 	// capipepoInput.disabled = true;
 	// ratigueyaInput.disabled = true;
 	petChooseBtn.disabled = true;
+	fireBtn.disabled = false;
+	waterBtn.disabled = false;
+	earthBtn.disabled = false;
 
 	playerChosenPet.textContent = petPlayer;
 	playerPetLives.textContent = playerLives;
@@ -196,10 +200,14 @@ function restartGame() {
 function startGame() {
 	
 	startGameSection.style.display = 'block';
-		startGameSection.classList.add('loader');
+	startGameSection.classList.add('loader');
+
 	setTimeout(() => {
 		
 		petChooseSection.style.display = 'block';
+		petChooseBtn.disabled = false;
+		onBtn.disabled = true;
+		
 	} , 4000);
 }
 
