@@ -139,6 +139,8 @@ function createMessages() {
 
 		messageSection.appendChild(finalResult);
 	}
+	
+	messageSection.scrollTop = messageSection.scrollHeight;
 }
 
 function fight() {
@@ -185,7 +187,6 @@ function lives() {
 		restartSection.style.display = 'block';
 	} 
 }
-
 
 function restartGame() {
 	
