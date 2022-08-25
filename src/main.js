@@ -193,8 +193,19 @@ function restartGame() {
 	setTimeout(() => location.reload(), 1000);
 }
 
+function startGame() {
+	
+	startGameSection.style.display = 'block';
+		startGameSection.classList.add('loader');
+	setTimeout(() => {
+		
+		petChooseSection.style.display = 'block';
+	} , 4000);
+}
+
 petChooseBtn.addEventListener('click', choosePlayerPet);
 fireBtn.addEventListener('click', fireAttack);
 waterBtn.addEventListener('click', waterAttack);
 earthBtn.addEventListener('click', earthAttack);
 restartBtn.addEventListener('click', restartGame);
+onBtn.addEventListener('click', startGame);

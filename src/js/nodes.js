@@ -5,6 +5,8 @@ const petChooseSection = nodes('#petChooseSection');
 const attackChooseSection = nodes('#attackChooseSection');
 const restartSection = nodes('#restartSection');
 const messageSection = nodes('#messageSection');
+const startGameSection = nodes('#startGameSection');
+
 
 // Inputs
 const hipodogeInput = nodes('#hipodogeInput');
@@ -17,6 +19,8 @@ const fireBtn = nodes('#fireBtn');
 const waterBtn = nodes('#waterBtn');
 const earthBtn = nodes('#earthBtn');
 const restartBtn = nodes('#restartBtn');
+const onBtn = nodes('#onBtn');
+
 
 // Paragraphs
 const playerChosenPet = nodes('#playerChosenPet');

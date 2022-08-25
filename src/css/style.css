@@ -16,6 +16,43 @@ body {
 	justify-content: center;
 }
 
+/* START GAME */
+#startGameSection {
+	margin-top: 20px;
+	position: absolute;
+  z-index: 3;
+	display: none;
+}
+
+.loader {
+	animation: loader 3s linear forwards;
+}
+
+#startGameSection h2	{
+	text-align: center;
+}
+
+#startGameSection img {
+	width: 240px;
+	height: 82px;
+	margin: 40px auto 0; 
+}
+
+@keyframes loader {
+  0% {
+  	opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 /* MAIN */
 main {
 	width: 300px;
@@ -40,6 +77,27 @@ main {
 	margin: 0 auto;
 	padding: 10px;
 	background-color: #C1C6B0;
+}
+
+#petChooseSection {
+	display: none;
+	position: absolute;
+  z-index: 1;
+  animation: startGame 5s linear forwards;
+}
+
+@keyframes startGame {
+  0% {
+  	opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    opacity: 0.5;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .paragraph {
@@ -114,6 +172,10 @@ h1 {
 	align-content: center;
 }
 
+.btn-color {
+	background-color: #36352D;
+}
+
 #petChooseBtn {
 	width: 100px;
 	height: 30px;
@@ -123,7 +185,6 @@ h1 {
 	position: relative;
 	border-radius: 6px;
 	border: 2px solid black;
-	background-color: #36352D;
 }
 
 #petChooseBtn:before {
@@ -136,7 +197,7 @@ h1 {
 	border-radius: 6px 6px 0 0;
 	border: 2px solid black;
 	border-bottom: none;
-	background-color: #36352D;
+	background-color: inherit;
 }
 
 #petChooseBtn:after {
@@ -149,13 +210,13 @@ h1 {
 	border-radius: 0 0 6px 6px;
 	border: 2px solid black;
 	border-top: none;
-	background-color: #36352D;
+	background-color: inherit;
 }
 
 .attackButtons {
 	width: 100px;
 	height: 60px;
-	margin: 40px 0 0 35px;
+	margin: 30px 0 0 35px;
 	position: relative;
 }
 
@@ -172,19 +233,16 @@ h1 {
 #fireBtn {
 	top: calc(100% - 45px);
 	right: calc(100% - 40px);
-	background-color: #36352D;
 }
 
 #waterBtn {
 	top: calc(100% - 60px);
 	right: calc(100% - 98px);
-	background-color: #36352D;
 }
 
 #earthBtn {
 	top: calc(100% - 5px);
 	right: calc(100% - 80px);
-	background-color: #36352D;
 }
 
 .onRestartSection {
@@ -201,7 +259,6 @@ h1 {
 	height: 10px;
 	border-radius: 6px;
 	border: 1px solid black;
-	background-color: #36352D;
 }
 
 #restartSection {
