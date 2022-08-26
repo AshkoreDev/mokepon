@@ -157,6 +157,7 @@ h1 {
 
 #attackChooseSection {
 	display: none;
+	animation: startGame 5s linear forwards;
 }
 
 .attackSection {
@@ -261,10 +262,6 @@ h1 {
 	border: 1px solid black;
 }
 
-#restartSection {
-	/*display: none;*/
-}
-
 .onRestartSection p {
 	color: #36352D;
 	font-size: 10px;
@@ -296,6 +293,10 @@ input[type="radio"] {
 	appearance: none;
 }
 
+input:checked + label {
+	transform: scale(1.2);
+}
+
 /* MEDIA QUERYS */
 @media (hover: hover) {
   #petChooseBtn:hover {
@@ -321,5 +322,11 @@ input[type="radio"] {
   label:hover {
   	cursor: pointer;
     transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  .onRestartSection {
+   margin-top: 120px;
   }
 }
