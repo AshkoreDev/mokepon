@@ -10,7 +10,7 @@ let finalResults = '';
 
 // Functions
 function random(min, max) {
-	
+
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -37,7 +37,7 @@ function chooseOpponentPet() {
 
 
 function choosePlayerPet() {
-	
+
 	let petPlayer = '';
 
 	if (hipodogeInput.checked) {
@@ -45,11 +45,11 @@ function choosePlayerPet() {
 		petPlayer = 'HIPODOGE';
 
 	} else if (capipepoInput.checked) {
-		
+
 		petPlayer = 'CAPIPEPO';
 
 	} else if (ratigueyaInput.checked) {
-		
+
 		petPlayer = 'RATIGUEYA';
 
 	} else {
@@ -70,7 +70,6 @@ function choosePlayerPet() {
 	playerChosenPet.textContent = petPlayer;
 	playerPetLives.textContent = playerLives;
 	opponentPetLives.textContent = opponentLives;
-	
 
 	if (hipodogeInput.checked || capipepoInput.checked || ratigueyaInput.checked) {
 
@@ -81,25 +80,25 @@ function choosePlayerPet() {
 }
 
 function fireAttack() {
-	
+
 	playerAttack = 'FUEGO';
 	chooseOpponentAttack();
 }
 
 function waterAttack() {
-	
-	playerAttack = 'AGUA';	
+
+	playerAttack = 'AGUA';
 	chooseOpponentAttack();
 }
 
 function earthAttack() {
-	
+
 	playerAttack = 'TIERRA';
 	chooseOpponentAttack();
 }
 
 function chooseOpponentAttack() {
-	
+
 	let randomOpponentAttack = random(1,3);
 
 	if (randomOpponentAttack == 1) {
@@ -115,11 +114,11 @@ function chooseOpponentAttack() {
 		opponentAttack = 'TIERRA';
 	}
 
-	fight();	
+	fight();
 }
 
 function createMessages() {
-	
+
 	const playerChosenAttack = document.createElement('p');
 	const opponentChosenAttack = document.createElement('p');
 	const fightResult = document.createElement('p');
@@ -143,7 +142,7 @@ function createMessages() {
 
 		messageSection.appendChild(finalResult);
 	}
-	
+
 	messageSection.scrollTop = messageSection.scrollHeight;
 }
 
@@ -157,7 +156,7 @@ function fight() {
 
 		fightResults = 'GANASTE LA PARTIDA.';
 		opponentLives--;
-		
+
 	} else {
 
 		fightResults = 'PERDISTE LA PARTIDA.';
@@ -172,7 +171,7 @@ function fight() {
 }
 
 function lives() {
-	
+
 	if (opponentLives == 0 || playerLives == 0) {
 
 		fireBtn.disabled = true;
@@ -189,26 +188,29 @@ function lives() {
 		}
 
 		restartSection.style.display = 'block';
-	} 
-}
-
-function restartGame() {
-	
-	setTimeout(() => location.reload(), 1000);
+	}
 }
 
 function startGame() {
-	
+
 	startGameSection.style.display = 'block';
 	startGameSection.classList.add('loader');
 
 	setTimeout(() => {
-		
+
 		petChooseSection.style.display = 'block';
 		petChooseBtn.disabled = false;
 		onBtn.disabled = true;
-		
-	} , 4000);
+
+	}, 4000);
+}
+
+function restartGame() {
+
+	setTimeout(() => {
+		location.reload();
+		// startGame();
+	}, 1000);
 }
 
 petChooseBtn.addEventListener('click', choosePlayerPet);
