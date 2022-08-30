@@ -200,7 +200,7 @@ function startGame() {
 
 		petChooseSection.style.display = 'block';
 		petChooseBtn.disabled = false;
-		onBtn.disabled = true;
+		// onBtn.disabled = true;
 
 	}, 4000);
 }
@@ -218,4 +218,6 @@ fireBtn.addEventListener('click', fireAttack);
 waterBtn.addEventListener('click', waterAttack);
 earthBtn.addEventListener('click', earthAttack);
 restartBtn.addEventListener('click', restartGame);
-onBtn.addEventListener('click', startGame);
+// onBtn.addEventListener('click', startGame);
+
+window.addEventListener('load', startGame);

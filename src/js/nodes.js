@@ -19,7 +19,7 @@ const fireBtn = nodes('#fireBtn');
 const waterBtn = nodes('#waterBtn');
 const earthBtn = nodes('#earthBtn');
 const restartBtn = nodes('#restartBtn');
-const onBtn = nodes('#onBtn');
+// const onBtn = nodes('#onBtn');
 
 
 // Paragraphs
