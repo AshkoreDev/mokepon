@@ -93,7 +93,7 @@ main {
     visibility: hidden;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.8;
     visibility: visible;
   }
   100% {
@@ -248,22 +248,19 @@ h1 {
 	right: calc(100% - 80px);
 }
 
-.onRestartSection {
+.restartSection {
 	margin: 80px auto 0;
 	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
-.onRestartSection button {
+.restartSection button {
 	width: 50px;
 	height: 15px;
 	border-radius: 6px;
 	border: 1px solid black;
 }
 
-.onRestartSection p {
+.restartSection p {
 	color: #36352D;
 	font-size: 14px;
 	font-weight: bold;
@@ -315,7 +312,7 @@ input:checked + label {
   	cursor: pointer;
     transform: scale(0.95);
   }
-  .onRestartSection button:hover {
+  .restartSection button:hover {
   	cursor: pointer;
     transform: scale(0.95);
   }
@@ -329,7 +326,7 @@ input:checked + label {
   main {
     height: 600px;
   }
-  .onRestartSection {
+  .restartSection {
    margin-top: 120px;
   }
 }

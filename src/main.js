@@ -186,8 +186,6 @@ function lives() {
 
 			finalResults = 'PERDISTE';
 		}
-
-		restartSection.style.display = 'block';
 	}
 }
 
@@ -200,24 +198,19 @@ function startGame() {
 
 		petChooseSection.style.display = 'block';
 		petChooseBtn.disabled = false;
-		// onBtn.disabled = true;
 
 	}, 4000);
 }
 
 function restartGame() {
 
-	setTimeout(() => {
-		location.reload();
-		// startGame();
-	}, 1000);
+	location.reload();
 }
 
-petChooseBtn.addEventListener('click', choosePlayerPet);
 fireBtn.addEventListener('click', fireAttack);
 waterBtn.addEventListener('click', waterAttack);
 earthBtn.addEventListener('click', earthAttack);
 restartBtn.addEventListener('click', restartGame);
-// onBtn.addEventListener('click', startGame);
+petChooseBtn.addEventListener('click', choosePlayerPet);
 
 window.addEventListener('load', startGame);
