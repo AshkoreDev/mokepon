@@ -5,95 +5,113 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" href="https://img.icons8.com/color/344/ultra-ball.png">
 	<title>MOKEPON</title>
-
 	<link rel="stylesheet"  href="./src/css/style.css">
 </head>
 <body>
 
 	<main>
-		<section class="borderScreen">
-			<section class="screen">
+    <div class="game">
+      <section class="borderScreen">
+        <section class="screen">
 
-				<section id="startGameSection">
-					<h2>¡¡MOKEPON!!</h2>
-					<img src="./src/images/front.png" alt="" width="240" height="82">
-				</section>
+          <section id="startGameSection">
+            <h2>¡¡MOKEPON!!</h2>
+            <img src="./src/images/front.png" alt="" width="240" height="82">
+          </section>
 
-				<section id="petChooseSection">
-					<h2>ELIGE TÚ MASCOTA:</h2>
+          <section id="petChooseSection">
+            <h2>ELIGE TÚ MASCOTA:</h2>
 
-					<section class="cards">
+            <section class="cards">
 
-						<article class="petCard">
-							<input type="radio" name="pet" id="hipodogeInput">
-							<label for="hipodogeInput">
-								<img src="./src/images/hipodoge.png" alt="Hipodoge image" width="80" height="80">
-								<p>HIPODOGE</p>
-							</label>
-						</article>
+              <article class="petCard">
+                <input type="radio" name="pet" id="hipodogeInput">
+                <label for="hipodogeInput">
+                  <img src="./src/images/hipodoge.png" alt="Hipodoge image" width="80" height="80">
+                  <p>HIPODOGE</p>
+                </label>
+              </article>
 
-						<article class="petCard">
-							<input type="radio" name="pet" id="capipepoInput">
-							<label for="capipepoInput">
-								<img src="./src/images/capipepo.png" alt="Hipodoge image" width="80" height="80">
-								<p>CAPIPEPO</p>
-							</label>
-						</article>
+              <article class="petCard">
+                <input type="radio" name="pet" id="capipepoInput">
+                <label for="capipepoInput">
+                  <img src="./src/images/capipepo.png" alt="Hipodoge image" width="80" height="80">
+                  <p>CAPIPEPO</p>
+                </label>
+              </article>
 
-						<article class="petCard">
-							<input type="radio" name="pet" id="ratigueyaInput">
-							<label for="ratigueyaInput">
-								<img src="./src/images/ratigueya.png" alt="Hipodoge image" width="80" height="80">
-								<p>RATIGUEYA</p>
-							</label>
-						</article>
+              <article class="petCard">
+                <input type="radio" name="pet" id="ratigueyaInput">
+                <label for="ratigueyaInput">
+                  <img src="./src/images/ratigueya.png" alt="Hipodoge image" width="80" height="80">
+                  <p>RATIGUEYA</p>
+                </label>
+              </article>
 
-					</section>
+            </section>
 
-				</section>
+          </section>
 
-				<h2 id="failMessage">SELECCIONA UNA MASCOTA...</h2>
+          <h2 id="failMessage">SELECCIONA UNA MASCOTA...</h2>
 
-				<section id="attackChooseSection" >
+          <section id="attackChooseSection" >
 
-					<section class="attackSection">
-						<div>
-							<p class="paragraph">JUGADOR: <span id="playerChosenPet"></span>.</p>
-							<p class="paragraph">VIDAS: <span id="playerPetLives"></span> ❤</p>
-						</div>
+            <section class="attackSection">
+              <div>
+                <p class="paragraph">JUGADOR: <span id="playerChosenPet"></span>.</p>
+                <p class="paragraph">VIDAS: <span id="playerPetLives"></span> ❤</p>
+              </div>
 
-						<div>
-							<p class="paragraph">OPONENTE: <span id="opponentChosenPet"></span>.</p>
-							<p class="paragraph">VIDAS: <span id="opponentPetLives"></span> ❤</p>
-						</div>
-					</section>
+              <div>
+                <p class="paragraph">OPONENTE: <span id="opponentChosenPet"></span>.</p>
+                <p class="paragraph">VIDAS: <span id="opponentPetLives"></span> ❤</p>
+              </div>
+            </section>
 
-					<h2 class="attack--title">ELIGE TÚ ATAQUE:</h2>
+            <h2 class="attack--title">ELIGE TÚ ATAQUE:</h2>
 
-					<section id="messageSection"></section>
+            <section id="messageSection"></section>
 
-				</section>
+          </section>
 
-			</section>
-			<h1>MOKEPON</h1>
-		</section>
+        </section>
+        <h1>MOKEPON</h1>
+      </section>
 
-		<section class="buttons">
-			<button id="petChooseBtn" class="btn-color" disabled="true">Seleccionar</button>
+      <section class="buttons">
+        <button id="petChooseBtn" class="btn-color" disabled="true">Seleccionar</button>
 
-			<section class="attackButtons">
-				<button id="fireBtn" class="attackBtn btn-color" disabled="true">F</button>
-				<button id="waterBtn" class="attackBtn btn-color" disabled="true">A</button>
-				<button id="earthBtn" class="attackBtn btn-color" disabled="true">T</button>
-			</section>
+        <section class="attackButtons">
+          <button id="fireBtn" class="attackBtn btn-color" disabled="true">F</button>
+          <button id="waterBtn" class="attackBtn btn-color" disabled="true">A</button>
+          <button id="earthBtn" class="attackBtn btn-color" disabled="true">T</button>
+        </section>
 
-			<section class="restartSection">
-				<button id="restartBtn" class="btn-color"></button>
-				<p>REINICIAR</p>
-			</section>
+        <section class="restartSection">
+          <button id="restartBtn" class="btn-color"></button>
+          <p>REINICIAR</p>
+        </section>
 
-		</section>
+      </section>
+    </div>
 	</main>
+
+  <footer>
+    <section class="footer__container">
+      <section class="footer__info">
+        <a href="https://www.linkedin.com/in/AshkoreDev/" target="_blank" rel="noopener" title="Linkedin" class="footer__info--item">
+        <img src="https://img.icons8.com/ios-filled/30/FFFFFF/linkedin.png" alt="Logo Linkedin" loading="lazy"/>
+      </a>
+       <a href="https://github.com/AshkoreDev" target="_blank" rel="noopener" title="GitHub" class="footer__info--item">
+        <img src="https://img.icons8.com/ios-filled/30/FFFFFF/github.png" alt="Logo GitHub" loading="lazy"/>
+      </a>
+       <a href="https://twitter.com/AshkoreDev" target="_blank" rel="noopener" title="Twitter" class="footer__info--item">
+        <img src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitter--v1.png" alt="Logo Twitter" loading="lazy"/>
+      </a>
+      </section>
+      <p class="footer__info">Aracely Alba @AshkoreDev | &copy; 2022</p>
+    </section>
+  </footer>
 
 	<script src="./src/main.js" type="module"></script>
 </body>
