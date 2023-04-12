@@ -10,12 +10,16 @@ html {
 	font-family: 'VT323', monospace;
 }
 
+body::-webkit-scrollbar {
+ display: none;
+}
+
 /* START GAME */
 #startGameSection {
 	margin-top: 20px;
+	display: none;
 	position: absolute;
  	z-index: 3;
-	display: none;
 }
 
 .loader {
@@ -60,8 +64,8 @@ main {
 	height: 600px;
 	margin-top: 12px;
 	border: 2px solid black;
-	background-color: #D59402;
  	border-radius: 10px 10px 80px 10px;
+	background-color: #D59402;
 }
 
 .borderScreen {
@@ -106,8 +110,8 @@ main {
 }
 
 h2 {
-	font-size: 20px;
 	margin-bottom: 20px;
+	font-size: 20px;
 }
 
 .attack--title {
@@ -124,8 +128,8 @@ h2 {
 	padding: 5px;
 	font-size: 15px;
 	overflow-y: scroll;
-	background-color: #C1C6B0;
   outline: 4px double #35393C;
+	background-color: #C1C6B0;
 }
 
 #messageSection::-webkit-scrollbar {
@@ -228,8 +232,8 @@ h1 {
 	height: 35px;
 	color: white;
 	font-weight: bold;
-	border-radius: 50%;
 	position: absolute;
+	border-radius: 50%;
 	border: 2px solid black;
 }
 
@@ -278,8 +282,8 @@ h1 {
 	width: 80px;
 	display: flex;
 	gap: 5px;
-	flex-direction: column;
 	align-items: center;
+	flex-direction: column;
 }
 
 label {
@@ -297,23 +301,28 @@ input:checked + label {
 /* FOOTER */
 .footer__container {
 	padding: 10px 0;
+	color: var(--white);
 	font-size: 1.2rem;
 	text-align: center;
-	color: var(--white);
-  }
+}
 
-  .footer__info {
+.footer__info {
 	width: 320px;
 	margin: 20px auto;
 	letter-spacing: 1.5px;
-  }
+}
 
-  .footer__info--item {
+.footer__info--item {
 	margin: 0 15px;
 	padding-bottom: 5px;
 	text-decoration: none;
 	border-bottom: 1px solid transparent;
-  }
+}
+
+.footer__info--item img {
+	width: 30px;
+	height: 30px;
+}
 
 /* MEDIA QUERYS */
 @media (hover: hover) {
